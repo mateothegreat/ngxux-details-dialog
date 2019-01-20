@@ -1,9 +1,47 @@
-import { Injectable } from '@angular/core';
+import { Injectable }                  from '@angular/core';
+import { NgxuxMatDialogSettings }      from '../../../ngxux-mat-dialog/src/lib/ngxux-mat-dialog-settings';
+import { NgxuxMatDialogService }       from '../../../ngxux-mat-dialog/src/lib/ngxux-mat-dialog.service';
+import { NgxuxDetailsDialogComponent } from './ngxux-details-dialog.component';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class NgxuxDetailsDialogService {
 
-  constructor() { }
+    public constructor(private dialogService: NgxuxMatDialogService) {
+
+    }
+
+    public open(obj: {
+
+        title: string
+
+    }): void {
+
+        setTimeout(() => {
+
+            this.dialogService.open(NgxuxDetailsDialogComponent, new NgxuxMatDialogSettings({
+
+                id: 'details',
+
+                title: obj.title,
+
+                width: '300px',
+                height: '300px',
+
+                nextLabel: 'Save',
+                nextShow: true
+
+            }));
+
+        }, 500);
+
+    }
+
+    public close(): void {
+
+        this.dialogService.close('details');
+
+    }
+
 }
