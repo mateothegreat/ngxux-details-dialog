@@ -1,6 +1,6 @@
 import { Injectable }                  from '@angular/core';
-import { NgxuxMatDialogSettings }      from '../../../ngxux-mat-dialog/src/lib/ngxux-mat-dialog-settings';
-import { NgxuxMatDialogService }       from '../../../ngxux-mat-dialog/src/lib/ngxux-mat-dialog.service';
+import { NgxuxMatDialogSettings }      from '@ngxux/ngxux-mat-dialog';
+import { NgxuxMatDialogService }       from '@ngxux/ngxux-mat-dialog';
 import { NgxuxDetailsDialogComponent } from './ngxux-details-dialog.component';
 
 @Injectable({
