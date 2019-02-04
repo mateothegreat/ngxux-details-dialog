@@ -1,6 +1,6 @@
 import { Injectable }                         from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ReplaySubject }                      from 'rxjs';
+import { Subject }                            from 'rxjs';
 import { NgxuxDetails }                       from './ngxux-details';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { NgxuxDetails }                       from './ngxux-details';
 })
 export class NgxuxDetailsDialogDataService {
 
-    public click$: ReplaySubject<NgxuxDetails> = new ReplaySubject();
+    public click$: Subject<NgxuxDetails> = new Subject();
 
     public formGroup: FormGroup = new FormGroup({
 
